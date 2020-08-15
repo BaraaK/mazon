@@ -1,0 +1,156 @@
+a {
+  text-decoration: none;
+  color: #203040;
+}
+a :hover {
+  text-decoration: none;
+  color: plum;
+}
+a :focus {
+  text-decoration: none;
+  color: plum;
+}
+a :active {
+  text-decoration: none;
+  color: plum;
+}
+button, a, li {
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+}
+p {
+  color: #203040;
+}
+
+.App {
+  align-items: center;
+  padding: .5rem;
+}
+.home-page{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.home-page-header{
+  background-color: #203040;
+  color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+  font-size: x-large;
+  margin-bottom: .3rem;
+  
+}
+.home-page-header ul {
+  display: flex;
+  flex-direction: row;
+  padding-right: 1rem;
+  justify-content: space-between;
+  
+}
+.home-page-header ul li {
+  padding-right: 1rem;
+  
+}
+.sideBar-icon {
+  color: white;
+  padding: 0.1rem;
+}
+
+.side-bar-window {
+  position: fixed;
+  transition: all 0.5s;
+  transform: translateX(-30rem);
+  width: 20rem;
+  background-color: whitesmoke;
+  height: 100%;
+}
+.open {
+  transform: translateX(0rem);
+
+}
+.side-bar-btn{
+  font-style: none;
+  background-color: #203040 ;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  margin-right: .3rem;
+}
+.side-bar-btn :hover {
+  color : plum;  
+}
+.side-bar-close-btn {
+  position: fixed;
+  transform: translateX(20rem);
+  background-color: #203040;
+  border: none;
+  
+}
+.side-bar-close-icon {
+  color:plum ;
+  font-size: xx-large;
+  
+}
+.form-inline  {
+  align-items: center;
+  justify-content: center;
+}
+.home-page-search-bar-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+.home-page-search-bar-container #dropdown-basic-button{
+  margin-left: 1.3rem;
+  color: #203040;
+  background-color:white ;
+  border-color: plum;
+}
+.home-page-search-btn{
+  color: #203040;
+  background-color: white;
+  border-color: plum;
+}
+.home-page-products-ul{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+
+}
+.home-page-product-li{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width:13rem;
+  height: 35rem;
+  align-items: left;
+  justify-content: center;
+  margin: 1rem;
+  padding: .5rem;
+ 
+}
+
+.home-page-product-img{
+  width:13rem;
+  height: 15rem;
+  padding: 1rem;
+}
+.home-page-product-name {
+  font-size: larger;
+  font-weight: bold;
+  color: #203040;
+}
+.home-page-product-reviews{
+  font-weight: bold;
+  font-size: small;
+}
+.home-page-product-price{
+  font-size: medium;
+  font-weight: bolder;
+}
