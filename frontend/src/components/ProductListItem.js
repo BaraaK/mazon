@@ -1,11 +1,13 @@
 import React from "react";
 import "../App.css";
 import { Link } from "react-router-dom";
+import ReactStars from "react-rating-stars-component";
+
 
 function ProductListItem({ item }) {
   return (
     <div className="home-page-product-li">
-      <Link to={`/products/${item._id}`}>
+      <Link id="#item-Link" to={`/products/${item._id}`}>
         <li>
           <div>
             <img
@@ -21,12 +23,14 @@ function ProductListItem({ item }) {
             <p>{item.brand}</p>
           </div>
           <div className="home-page-product-price">
-            <p>{item.price}</p>
+            <p>{item.price}$</p>
           </div>
           <div className="home-page-product-reviews">
-            <p>
-              {item.rating} {item.numReviews}
-            </p>
+            <div class="home-page-review">
+              <ReactStars value={item.rating} edit={false} size={24} activeColor="#ffd700"/>
+              <div>{item.numReviews}</div>
+               
+            </div>
           </div>
         </li>
       </Link>

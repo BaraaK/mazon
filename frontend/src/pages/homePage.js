@@ -8,26 +8,15 @@ import {
   Dropdown,
 } from "react-bootstrap";
 import ProductList from "../components/ProductList";
-import axios from "axios";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchProducts } from "../reducers/product/productActions";
+
 
 function HomePage(props) {
-  const [products, setProducts] = useState([]);
-  const [isLoading, setLoading] = useState(false);
-  const [hasError, setError] = useState(false);
-
-  const fetchData = async () => {
-    try {
-      setLoading(true);
-      const response = await axios("/products");
-      setProducts(response.data);
-    } catch (error) {
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
-  };
+  const { loading, error, products } = useSelector((state) => state.product);
+  const dispatch = useDispatch();
   useEffect(() => {
-    fetchData();
+    dispatch(fetchProducts());
   }, []);
   return (
     <div>
@@ -46,18 +35,16 @@ function HomePage(props) {
           <Dropdown.Item href="#/action-3">Avg. customer reviews</Dropdown.Item>
         </DropdownButton>
       </div>
-      <div>{isLoading && <p className="alert alert-light">is loading</p>}</div>
+      <div>{loading && <p className="alert alert-light">is loading</p>}</div>
       <div>
-        {hasError && (
+        {error && (
           <p className="alert alert-danger">
             sorry there is an error! Try again later
           </p>
         )}
       </div>
       <div>
-        {!hasError && products.length !== 0 && (
-          <ProductList products={products} />
-        )}
+        {!error && products.length !== 0 && <ProductList products={products} />}
       </div>
     </div>
   );

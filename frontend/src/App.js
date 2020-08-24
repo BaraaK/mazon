@@ -1,9 +1,11 @@
 import React from "react";
 import "./App.css";
-import { logo } from "./assets/logo.png";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import HomePage from './pages/HomePage';
-import productDetails from './pages/ProductDetails'
+//import { logo } from "/assets/logo.png";
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import homePage from './pages/homePage';
+import productDetails from './pages/productDetails'
+import cartPage from './pages/CartPage'
+import {useSelector} from 'react-redux'
 
 function openSideBarMenue() {
   document.querySelector(".side-bar-window").classList.add("open");
@@ -12,6 +14,10 @@ function closeSideBarMenue() {
   document.querySelector(".side-bar-window").classList.remove("open");
 }
 function App() {
+  let itemList = []
+  const {cartItems} = useSelector(state => state.cart)
+  itemList = [...itemList,cartItems]
+  console.log(cartItems)
   return (
     <Router>
     <div className="home-page">
@@ -20,13 +26,13 @@ function App() {
           <button className="side-bar-btn" onClick={openSideBarMenue}>
             <i className="fas fa-bars sideBar-icon"></i>
           </button>
-          <a>mazon</a>
+          <Link className="hover" id="brand-name" to="/">mazon</Link>
         </div>
         <div>
           <ul>
-            <li>Acount</li>
-            <li>Orders</li>
-            <li>Cart</li>
+            <li className="hover">Acount</li>
+            <li className="hover">Orders</li>
+  <li className="hover"><Link className="hover" id="cart-icon" to="/cart"><i className="fas fa-shopping-cart"></i><span className="cart-info">{itemList.length}</span></Link></li>
           </ul>
         </div>
       </header>
@@ -52,8 +58,9 @@ function App() {
       <main className="home-page-main">
         <div>
         <Switch>
-          <Route exact path="/" component={HomePage}></Route>
+          <Route exact path="/" component={homePage}></Route>
           <Route path="/products/:id" component={productDetails}></Route>
+          <Route path="/cart" component={cartPage}></Route>
         </Switch>
         </div>
       </main>

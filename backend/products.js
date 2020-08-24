@@ -7,40 +7,40 @@ export default {
       image: './assets/1.png',
       price: 75,
       brand: ' BRAUN',
-      rating: 4.5,
-      numReviews: 11,
-      count:6
+      rating: 5,
+      numReviews: 19,
+      count:0
     },
     {
       _id: '2',
       name: 'Ozone generator',
       category: 'Gadgets',
-      image: '..\\assets\\2.jpg',
+      image: './assets/2.jpg',
       price: 50,
       brand: 'Ozone',
-      rating: 3.4,
-      numReviews: 6,
-      count:0
+      rating: 4,
+      numReviews: 1125,
+      count:3
     },
     {
       _id: '3',
       name: 'Humidifier',
       category: 'Gadgets',
-      image: './src/assets/3.jpg',
+      image: './assets/3.jpg',
       price: 85,
       brand: 'Humi',
-      rating: 4,
-      numReviews: 8,
+      rating: 2,
+      numReviews: 6,
       count:10
     }, {
       _id: '4',
       name: 'Iron',
       category: 'Living',
-      image: 'assets/4.jpg',
+      image: './assets/4.jpg',
       price: 173.89,
       brand: ' Philips',
-      rating: 4.1,
-      numReviews: 8,
+      rating: 3,
+      numReviews: 724,
       count:1
     },
   ]
